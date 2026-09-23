@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日句子｜我的考研资料库</title><meta name="description" content="考研英语一每日句子训练：题目、作答、讲评和待办记录。">
+<style>
+:root{--bg:#eef1f4;--card:#fff;--ink:#0f1720;--sub:#5b6873;--line:#e3e8ec;--accent:#0f766e;--accent2:#7c3aed;--soft:#ecf8f6;--violet:#f4f0ff;--amber:#fff7df;--shadow:0 1px 3px rgba(15,23,32,.07),0 8px 24px rgba(15,23,32,.05)}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1117;--card:#161b22;--ink:#e6edf3;--sub:#9aa7b2;--line:#2a313a;--accent:#45c9b7;--accent2:#b59cff;--soft:#102b28;--violet:#241c38;--amber:#352d19;--shadow:0 1px 3px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.3)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;-webkit-text-size-adjust:100%}button,input{font:inherit}.wrap{max-width:920px;margin:auto;padding:18px 14px 70px}.topbar{display:flex;align-items:center;justify-content:space-between;margin:0 4px 14px}.back{color:var(--sub);text-decoration:none;font-size:14px}.updated{font-size:12px;color:var(--sub)}header{position:relative;overflow:hidden;border-radius:24px;padding:30px 26px;color:#fff;background:linear-gradient(135deg,#0f766e 0%,#115e59 48%,#5b21b6 100%);box-shadow:var(--shadow)}header:after{content:"";position:absolute;right:-42px;top:-65px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.10)}.k{font-size:12px;letter-spacing:.16em;opacity:.8}h1{font-size:clamp(28px,6vw,42px);line-height:1.2;margin:8px 0}header p{max-width:590px;margin:0;opacity:.91;font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 20px}.stat{background:var(--card);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}.stat b{display:block;font-size:24px;line-height:1.2}.stat span{font-size:12px;color:var(--sub)}.tools{position:sticky;top:8px;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:18px;padding:10px;margin-bottom:20px}.search{width:100%;border:0;background:var(--card);color:var(--ink);border-radius:11px;padding:10px 12px;outline:none;box-shadow:inset 0 0 0 1px var(--line)}.filters{display:flex;gap:7px;overflow:auto;padding-top:9px;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filter,.date-chip{flex:none;border:0;border-radius:99px;padding:6px 11px;background:var(--card);color:var(--sub);font-size:12px;cursor:pointer;box-shadow:inset 0 0 0 1px var(--line)}.filter.active,.date-chip.active{background:var(--accent);color:#fff;box-shadow:none}.day{margin:28px 0 36px;scroll-margin-top:128px}.day-head{display:flex;align-items:end;justify-content:space-between;margin:0 4px 10px}.eyebrow{font-size:10px;letter-spacing:.14em;color:var(--accent);font-weight:700}h2{font-size:22px;line-height:1.2;margin:2px 0}.day-count{font-size:12px;color:var(--sub)}.questions{display:grid;gap:9px}.question{background:var(--card);border-radius:15px;box-shadow:var(--shadow);overflow:hidden}.question[hidden],.day[hidden]{display:none}summary{display:grid;grid-template-columns:34px minmax(0,1fr) auto 18px;gap:9px;align-items:center;cursor:pointer;list-style:none;padding:14px}summary::-webkit-details-marker{display:none}.number{display:grid;place-items:center;width:31px;height:31px;border-radius:9px;background:var(--soft);color:var(--accent);font-size:12px;font-weight:800}.qtitle{font-weight:650;font-size:14px;line-height:1.45}.badge{font-size:11px;padding:3px 8px;border-radius:99px;white-space:nowrap}.badge.reviewed{background:var(--soft);color:var(--accent)}.badge.pending{background:var(--violet);color:var(--accent2)}.badge.blocked{background:var(--amber);color:#9a6700}.chevron{color:var(--sub);transition:.18s}details[open] .chevron{transform:rotate(180deg)}.question-body{padding:0 16px 17px 57px;border-top:1px solid var(--line)}.label{margin-top:14px;font-size:11px;letter-spacing:.08em;color:var(--sub);font-weight:700}.prompt,.answer p,.empty{white-space:pre-line;margin:4px 0 0;font-size:14px}.answer p{padding:11px 13px;border-left:3px solid var(--accent2);border-radius:0 9px 9px 0;background:var(--violet);font-family:ui-serif,Georgia,serif}.feedback{margin:13px 0 0;border-top:1px solid var(--line)}.feedback-row{display:grid;grid-template-columns:145px 1fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--line)}dt{font-size:12px;color:var(--accent);font-weight:700}dd{margin:0;font-size:13px}.empty{color:var(--sub);font-style:italic}.history{background:var(--card);border-radius:18px;padding:18px;box-shadow:var(--shadow);margin-top:34px}.history h2{margin-bottom:3px}.history>p{margin:0 0 12px;color:var(--sub);font-size:13px}.history-row{display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}.history-row span{color:var(--accent);font-weight:800}.history-row b{font-weight:550}.history-row em{color:var(--sub);font-style:normal;font-size:11px;text-align:right}.no-results{display:none;text-align:center;color:var(--sub);padding:42px 0}footer{text-align:center;color:var(--sub);font-size:12px;margin-top:38px}
+@media(max-width:620px){.wrap{padding:12px 10px 52px}header{border-radius:20px;padding:24px 20px}.stats{gap:7px}.stat{padding:13px 12px}.stat b{font-size:20px}.question-body{padding-left:14px}.feedback-row{grid-template-columns:1fr;gap:3px}.history-row{grid-template-columns:28px 1fr}.history-row em{grid-column:2;text-align:left}}
+</style></head><body><main class="wrap">
+<div class="topbar"><a class="back" href="/">← 返回资料库</a><span class="updated">更新于 2026-09-23</span></div>
+<header><div class="k">考研英语一 · 表达训练台账</div><h1>每日句子</h1><p>按日期保存题目、你的原答、逐项讲评与推荐表达。点开任意题目查看详情，也可以筛选待作答内容。</p></header>
+<section class="stats"><div class="stat"><b>70</b><span>完整题目</span></div><div class="stat"><b>19</b><span>已作答讲评</span></div><div class="stat"><b>51</b><span>待继续</span></div></section>
+<nav class="tools" aria-label="筛选"><input class="search" id="search" type="search" placeholder="搜索题目、题型或你的答案…"><div class="filters"><button class="filter active" data-state="all">全部</button><button class="filter" data-state="reviewed">已讲评</button><button class="filter" data-state="pending">待作答</button><button class="filter" data-state="blocked">待补写</button><button class="date-chip" data-date="2026-09-22">09.22</button><button class="date-chip" data-date="2026-09-21">09.21</button><button class="date-chip" data-date="2026-09-15">09.15</button><button class="date-chip" data-date="2026-09-14">09.14</button><button class="date-chip" data-date="2026-09-13">09.13</button><button class="date-chip" data-date="2026-09-12">09.12</button><button class="date-chip" data-date="2026-09-11">09.11</button></div></nav>
+<div id="archive"><section class="day" data-date="2026-09-22">
+          <div class="day-head"><div><span class="eyebrow">DAILY PRACTICE</span><h2>2026-09-22</h2></div><span class="day-count">0/10 已讲评</span></div>
+          <div class="questions">
+      <details class="question" data-state="pending" data-search="2026-09-22-01 大作文·主体论证｜中文转英文 用一句英文表达：“与一次安排过多任务相比，每天留出固定的阅读时间，更有助于学生养成持久的阅读习惯。” ">
+        <summary><span class="number">01</span><span class="qtitle">大作文·主体论证｜中文转英文</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">用一句英文表达：“与一次安排过多任务相比，每天留出固定的阅读时间，更有助于学生养成持久的阅读习惯。”</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-22-02 小作文·邀请信中的安排｜中文转英文 你代表学生读书会邀请陈教授参加交流活动。本句只说明活动时间和回复期限。
+请用一句话表达：“交流活动将于下周三下午两点至四点举行，请您最迟在本周五中午确认能否参加。” ">
+        <summary><span class="number">02</span><span class="qtitle">小作文·邀请信中的安排｜中文转英文</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">你代表学生读书会邀请陈教授参加交流活动。本句只说明活动时间和回复期限。
+请用一句话表达：“交流活动将于下周三下午两点至四点举行，请您最迟在本周五中午确认能否参加。”</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-22-03 小作文·来信回复中的建议｜情境造句 交换生朋友emma准备参加一个中文读书会，但担心自己读得慢，赶不上大家的进度。读书会提前一周公布篇目，也允许成员只分享其中一个片段。
+请自行选择一项她能够执行的准备方法，用一句话提出建议并说明为什么适合她；不写问候或结尾。 ">
+        <summary><span class="number">03</span><span class="qtitle">小作文·来信回复中的建议｜情境造句</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">交换生朋友Emma准备参加一个中文读书会，但担心自己读得慢，赶不上大家的进度。读书会提前一周公布篇目，也允许成员只分享其中一个片段。
+请自行选择一项她能够执行的准备方法，用一句话提出建议并说明为什么适合她；不写问候或结尾。</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-22-04 小作文·向活动负责人提出请求｜情境造句 你已报名参加周六的社区绘画工作坊，但报名时填写的邮箱有误，因此没有收到材料清单。现在你正在用正确的邮箱给负责人发信。
+请用一句话简要说明情况，并提出一项能帮助你做好准备的具体请求；语气礼貌，不写称呼。 ">
+        <summary><span class="number">04</span><span class="qtitle">小作文·向活动负责人提出请求｜情境造句</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">你已报名参加周六的社区绘画工作坊，但报名时填写的邮箱有误，因此没有收到材料清单。现在你正在用正确的邮箱给负责人发信。
+请用一句话简要说明情况，并提出一项能帮助你做好准备的具体请求；语气礼貌，不写称呼。</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-22-05 小作文·感谢信正文｜纠错 你写信感谢王教授对研究计划的建议。请保留“建议有帮助”和“帮助缩小研究范围”两项信息，改成准确、自然的一句话：
+your advices was very helpful, they helped me narrow down the scope of my research. ">
+        <summary><span class="number">05</span><span class="qtitle">小作文·感谢信正文｜纠错</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">你写信感谢王教授对研究计划的建议。请保留“建议有帮助”和“帮助缩小研究范围”两项信息，改成准确、自然的一句话：
+Your advices was very helpful, they helped me narrow down the scope of my research.</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-22-06 大作文·主体说明作用｜表达升级 下面句子用于讨论社区花园。原句意思清楚，请保留原意，使表达更简洁、减少重复；不增加新的作用：
+when neighbours work together in a community garden, they have opportunities to talk to one another, and these opportunities can help them get to know one another better. ">
+        <summary><span class="number">06</span><span class="qtitle">大作文·主体说明作用｜表达升级</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">下面句子用于讨论社区花园。原句意思清楚，请保留原意，使表达更简洁、减少重复；不增加新的作用：
+When neighbours work together in a community garden, they have opportunities to talk to one another, and these opportunities can help them get to know one another better.</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-22-07 大作文·图表客观描述｜两句衔接① 与第8题共用材料：某校调查学生每周至少三次自带水杯的比例。2026年3月为32%，6月为48%；学校在4月增设了免费饮水点。以上为训练数据。
+用一句话准确描述3月至6月的比例变化，只写数据事实，不解释原因。 ">
+        <summary><span class="number">07</span><span class="qtitle">大作文·图表客观描述｜两句衔接①</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">与第8题共用材料：某校调查学生每周至少三次自带水杯的比例。2026年3月为32%，6月为48%；学校在4月增设了免费饮水点。以上为训练数据。
+用一句话准确描述3月至6月的比例变化，只写数据事实，不解释原因。</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-22-08 大作文·谨慎解读｜两句衔接② 承接第7题，用一句话说明新增饮水点可能怎样促进这一变化，写出一个具体理由。
+这是对可能原因的推测；不能声称仅凭这组数据已经证明了因果关系。第二句须增加信息，并与第一句自然衔接。 ">
+        <summary><span class="number">08</span><span class="qtitle">大作文·谨慎解读｜两句衔接②</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">承接第7题，用一句话说明新增饮水点可能怎样促进这一变化，写出一个具体理由。
+这是对可能原因的推测；不能声称仅凭这组数据已经证明了因果关系。第二句须增加信息，并与第一句自然衔接。</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-22-09 小作文·补救安排｜间隔复现 复习来源：2026-09-21-04。
+你答应今天把借来的书还给朋友alex，他明天上午需要用书。你已经解释过原因并道歉，现在可以今晚送还。
+请用一句话提出今晚归还的安排，并询问对方是否方便；本句只写补救与询问。 ">
+        <summary><span class="number">09</span><span class="qtitle">小作文·补救安排｜间隔复现</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">复习来源：2026-09-21-04。
+你答应今天把借来的书还给朋友Alex，他明天上午需要用书。你已经解释过原因并道歉，现在可以今晚送还。
+请用一句话提出今晚归还的安排，并询问对方是否方便；本句只写补救与询问。</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-22-10 大作文·主体解释｜换情境迁移 复习来源：2026-09-21-06，迁移“服务设计如何帮助使用者更容易完成任务”的表达。
+某社区服务中心在办事窗口旁放置了填写完整的表格样本，首次办理业务的居民可以查看。
+请用一个完整英文句子说明这一做法可能怎样帮助居民填写自己的表格；说明帮助如何产生，不只写“很方便”。 ">
+        <summary><span class="number">10</span><span class="qtitle">大作文·主体解释｜换情境迁移</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">复习来源：2026-09-21-06，迁移“服务设计如何帮助使用者更容易完成任务”的表达。
+某社区服务中心在办事窗口旁放置了填写完整的表格样本，首次办理业务的居民可以查看。
+请用一个完整英文句子说明这一做法可能怎样帮助居民填写自己的表格；说明帮助如何产生，不只写“很方便”。</p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details></div>
+        </section><section class="day" data-date="2026-09-21">
+          <div class="day-head"><div><span class="eyebrow">DAILY PRACTICE</span><h2>2026-09-21</h2></div><span class="day-count">10/10 已讲评</span></div>
+          <div class="questions">
+      <details class="question" data-state="reviewed" data-search="2026-09-21-01 大作文·主体解释｜中文转英文 请用一个完整英文句子表达：
+“如果学生只收藏学习资料，却不花时间使用它们，这些资料就很难真正帮助他们进步。” if a students only collect study materials without using them, those materials won&#x27;t help  him/her truly make progress in studies.">
+        <summary><span class="number">01</span><span class="qtitle">大作文·主体解释｜中文转英文</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">请用一个完整英文句子表达：
+“如果学生只收藏学习资料，却不花时间使用它们，这些资料就很难真正帮助他们进步。”</p>
+          <div class="answer"><div class="label">你的原答</div><p>If a students only collect study materials without using them, those materials won&#x27;t help  him/her truly make progress in studies.</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>条件与结果清楚，without using them自然概括未使用资料；won’t把“很难”说成了“不会”，应调弱。</dd></div><div class="feedback-row"><dt>必须纠错</dt><dd>a students单复数冲突；泛指群体推荐students collect，并把him/her改成them。若用单数则a student collects。</dd></div><div class="feedback-row"><dt>语义调整</dt><dd>用are unlikely to help对应“很难”，避免绝对化。</dd></div><div class="feedback-row"><dt>可保留</dt><dd>If条件句、study materials、without using them、make progress均可保留；help后省略to正确。</dd></div><div class="feedback-row"><dt>保留原结构的修改句</dt><dd>If students only collect study materials without using them, those materials are unlikely to help them truly make progress in their studies.</dd></div><div class="feedback-row"><dt>可选自然升级</dt><dd>If students merely collect study materials without putting them to use, they are unlikely to make real progress in their studies.</dd></div><div class="feedback-row"><dt>升级说明</dt><dd>merely=仅仅；put something to use=把某物实际用起来；make real progress=取得实质性进步。均为可选表达，不是必须纠错。</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-21-02 小作文·活动通知正文｜中文转英文 你是学生会成员，正在发布校园旧物捐赠活动通知。请用一句话表达：
+“为方便分类，请在周五下午五点前将书籍与衣物分开放到指定的收集点。” to make classification convenient, please put your books and clothes separately into designated locations by this friday 5 p.m..">
+        <summary><span class="number">02</span><span class="qtitle">小作文·活动通知正文｜中文转英文</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">你是学生会成员，正在发布校园旧物捐赠活动通知。请用一句话表达：
+“为方便分类，请在周五下午五点前将书籍与衣物分开放到指定的收集点。”</p>
+          <div class="answer"><div class="label">你的原答</div><p>To make classification convenient, please put your books and clothes separately into designated locations by this Friday 5 p.m..</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>已写出目的、物品、分开放置和截止时间，主要信息齐全。</dd></div><div class="feedback-row"><dt>必须修改</dt><dd>by this Friday 5 p.m.应改为by 5 p.m. this Friday；句末只保留一个句点。</dd></div><div class="feedback-row"><dt>搭配调整</dt><dd>make classification convenient不适合实物整理，通知中用facilitate sorting或make sorting easier；designated locations过于宽泛，“收集点”用designated collection points。</dd></div><div class="feedback-row"><dt>表达清晰度</dt><dd>put books and clothes separately可能被读成“把每本书和每件衣服分别放置”。用separate books from clothes可直接表达“书籍和衣物分开”。</dd></div><div class="feedback-row"><dt>保留原结构的修改句</dt><dd>To make sorting easier, please place books and clothes separately at the designated collection points by 5 p.m. this Friday.</dd></div><div class="feedback-row"><dt>更清楚的推荐句</dt><dd>To facilitate sorting, please separate books from clothes and leave them at the designated collection points by 5 p.m. this Friday.</dd></div><div class="feedback-row"><dt>表达说明</dt><dd>facilitate sorting意为“便于分类整理”，正式简洁；separate A from B明确表示“把A和B分开”。</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-21-03 小作文·建议信正文｜情境造句 学校图书馆向学生征求改进意见。你发现小组讨论区与安静阅读区紧挨着，谈话声经常影响阅读。
+请自行提出一项图书馆可以实施的具体改进，用一句话写出“建议＋预期作用”；收件人是图书馆负责人，不写称呼或自我介绍。 to make readers more focusing on their readings, i suggest separating the group discussion areas and the reading areas, and building sound-absorbed shells between them.">
+        <summary><span class="number">03</span><span class="qtitle">小作文·建议信正文｜情境造句</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">学校图书馆向学生征求改进意见。你发现小组讨论区与安静阅读区紧挨着，谈话声经常影响阅读。
+请自行提出一项图书馆可以实施的具体改进，用一句话写出“建议＋预期作用”；收件人是图书馆负责人，不写称呼或自我介绍。</p>
+          <div class="answer"><div class="label">你的原答</div><p>To make readers more focusing on their readings, I suggest separating the group discussion areas and the reading areas, and building sound-absorbed shells between them.</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>提出了空间隔离并说明目的，方向切题；但一句中并列了“分开区域”和“建隔音设施”两项措施，可收束为安装隔音设施这一项。</dd></div><div class="feedback-row"><dt>必须纠错</dt><dd>make readers more focusing不成立：make后接动词原形focus；更自然的是help readers concentrate。</dd></div><div class="feedback-row"><dt>搭配调整</dt><dd>readings在这里不指“阅读活动”；用reading或what they are reading。sound-absorbed表示“已经被声音吸收”，设施应为sound-absorbing或soundproof；shells不适合室内分隔设施，用partitions或panels。</dd></div><div class="feedback-row"><dt>推荐修改句</dt><dd>I suggest installing soundproof partitions between the group discussion area and the quiet reading area so that readers can concentrate better.</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-21-04 小作文·道歉后的补救｜情境造句 你向交换生朋友alex借了一本书，答应今天归还，但出门时把书忘在宿舍。他明天上午需要用书，你今晚有空。
+请用一句话提出你能够执行的具体补救安排，并询问是否方便；不重复解释原因，不替对方确定见面时间。 sorry that i left the book at my dorm, but i am available tonight, so i want to know if you are ok that i give it to you tonight.">
+        <summary><span class="number">04</span><span class="qtitle">小作文·道歉后的补救｜情境造句</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">你向交换生朋友Alex借了一本书，答应今天归还，但出门时把书忘在宿舍。他明天上午需要用书，你今晚有空。
+请用一句话提出你能够执行的具体补救安排，并询问是否方便；不重复解释原因，不替对方确定见面时间。</p>
+          <div class="answer"><div class="label">你的原答</div><p>Sorry that I left the book at my dorm, but I am available tonight, so I want to know if you are ok that I give it to you tonight.</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>写出了今晚归还并询问对方是否方便，但重复解释了忘书的原因，违反题目限制。</dd></div><div class="feedback-row"><dt>必须纠错</dt><dd>are you ok that...不自然；询问是否方便用Would it be convenient if...? 或Would you be available...?。</dd></div><div class="feedback-row"><dt>搭配调整</dt><dd>归还借来的书用return the book或bring the book back to you；give it to you只表示“把它给你”。若保留原因，应说in my dorm room，但本题应删去原因。</dd></div><div class="feedback-row"><dt>推荐修改句</dt><dd>I can return the book to you this evening; would that be convenient for you?</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-21-05 小作文·通知中的参与要求｜纠错 下面一句用于学生会发布的校园摄影比赛通知。请保留“每人最多提交三张照片”和“照片须由本人拍摄”两项信息，改成准确、自然的一句话：
+each student can submits up to three photos, which must taken by themselves. each student is allowed to submit up to three photos, which must be taken by themselves.">
+        <summary><span class="number">05</span><span class="qtitle">小作文·通知中的参与要求｜纠错</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">下面一句用于学生会发布的校园摄影比赛通知。请保留“每人最多提交三张照片”和“照片须由本人拍摄”两项信息，改成准确、自然的一句话：
+Each student can submits up to three photos, which must taken by themselves.</p>
+          <div class="answer"><div class="label">你的原答</div><p>Each student is allowed to submit up to three photos, which must be taken by themselves.</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>两项信息均已覆盖，句子基本正确。</dd></div><div class="feedback-row"><dt>可保留</dt><dd>is allowed to submit up to three photos和被动结构must be taken均可使用。</dd></div><div class="feedback-row"><dt>精确度调整</dt><dd>by themselves可能被理解为“在没有他人帮助的情况下拍摄”，而题目强调照片必须是申请者本人作品；each student与themselves在正式考试写作中也可改得更稳妥。</dd></div><div class="feedback-row"><dt>推荐修改句</dt><dd>Each student may submit up to three photographs, all of which must have been taken personally by the applicant.</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-21-06 大作文·主体说明作用｜表达升级 下面一句用于讨论社区信息服务。请保留原意，使表达更简洁、动作与作用更清楚；不增加新的作用，也不必使用生僻词：
+clear signs in public buildings can make it possible for visitors to find the places they need to go to without having to ask other people for help. clear signs in public buildings can make visitors find their destination more convenient without asking others for help.">
+        <summary><span class="number">06</span><span class="qtitle">大作文·主体说明作用｜表达升级</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">下面一句用于讨论社区信息服务。请保留原意，使表达更简洁、动作与作用更清楚；不增加新的作用，也不必使用生僻词：
+Clear signs in public buildings can make it possible for visitors to find the places they need to go to without having to ask other people for help.</p>
+          <div class="answer"><div class="label">你的原答</div><p>Clear signs in public buildings can make visitors find their destination more convenient without asking others for help.</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>保留了“清楚标识→自己找到地点→无需求助”的因果链。</dd></div><div class="feedback-row"><dt>必须纠错</dt><dd>convenient是形容词，不能在这里修饰find；即使改成conveniently，搭配仍不如find...more easily自然。</dd></div><div class="feedback-row"><dt>搭配调整</dt><dd>make visitors find语法上可分析为使役结构，但语气生硬；用help visitors find更自然。多人可能前往不同地点，destinations更合适；ask others for directions比ask others for help更具体。</dd></div><div class="feedback-row"><dt>推荐修改句</dt><dd>Clear signs in public buildings help visitors find their destinations more easily without having to ask others for directions.</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-21-07 大作文·图画客观描述｜两句衔接① 与第8题共用的原创图画情境：一名学生坐在书桌前，桌上放着一张批改过的试卷；他正在笔记本上重做一道打了叉的题，并在旁边写下“漏看条件”。墙上的课程表只是背景。
+请用一句话概括主要人物及其正在做的事情，只描述可见内容，不评价意义，也不必罗列背景物品。 sitting at the desk and with a rectified exam paper on the desk, a student is re-answering a question that he/she did wrong at the first time on his/her notebook, and writing “missing conditions” near the question.">
+        <summary><span class="number">07</span><span class="qtitle">大作文·图画客观描述｜两句衔接①</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">与第8题共用的原创图画情境：一名学生坐在书桌前，桌上放着一张批改过的试卷；他正在笔记本上重做一道打了叉的题，并在旁边写下“漏看条件”。墙上的课程表只是背景。
+请用一句话概括主要人物及其正在做的事情，只描述可见内容，不评价意义，也不必罗列背景物品。</p>
+          <div class="answer"><div class="label">你的原答</div><p>Sitting at the desk and with a rectified exam paper on the desk, A student is re-answering a question that he/she did wrong at the first time on his/her notebook, and writing “missing conditions” near the question.</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>主要人物、重做错题和写下错误原因都写到了，但修饰成分过多，图画主干不够清楚。</dd></div><div class="feedback-row"><dt>必须纠错</dt><dd>句中a student不应大写；do a question wrong改为get/answer a question wrong；the first time前不加at；在笔记本里用in a notebook。</dd></div><div class="feedback-row"><dt>搭配调整</dt><dd>rectified exam paper不是“批改过的试卷”，应为marked/corrected exam paper；re-answering不如reworking/redoing自然；missing conditions表示“题目缺少条件”，图中“漏看条件”应为overlooked a condition。</dd></div><div class="feedback-row"><dt>代词与结构</dt><dd>he/she和his/her使句子笨重，可用单数they，或调整结构省去代词。开头Sitting...and with...形式不平行。</dd></div><div class="feedback-row"><dt>推荐修改句</dt><dd>At a desk, a student is reworking an incorrectly answered question in a notebook and writing “overlooked a condition” beside it, with a marked exam paper lying nearby.</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-21-08 大作文·主体解释｜两句衔接② 承接第7题，用一句话说明画中这种处理错题的做法，可能怎样帮助学生应对以后遇到的类似题目。
+请把作用发生的过程写清楚，不只说“能提高成绩”；与第7句衔接，且本句本身完整。 by doing the question repeatedly and listing why they did it wrong at the first time, students can enhance the correct way of thought and use one question to help solve many similar questions.">
+        <summary><span class="number">08</span><span class="qtitle">大作文·主体解释｜两句衔接②</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">承接第7题，用一句话说明画中这种处理错题的做法，可能怎样帮助学生应对以后遇到的类似题目。
+请把作用发生的过程写清楚，不只说“能提高成绩”；与第7句衔接，且本句本身完整。</p>
+          <div class="answer"><div class="label">你的原答</div><p>By doing the question repeatedly and listing why they did it wrong at the first time, students can enhance the correct way of thought and use one question to help solve many similar questions.</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>已经形成“重做错题→查明原因→迁移到类似题”的完整机制，论证方向很好。</dd></div><div class="feedback-row"><dt>必须纠错</dt><dd>at the first time改为the first time；enhance the correct way of thought和use one question to help solve many similar questions不属于自然英语搭配。</dd></div><div class="feedback-row"><dt>搭配调整</dt><dd>do the question repeatedly容易变成机械重复，可用rework the problem；listing why...改为identifying why...；“思路”可写problem-solving approach或reasoning。</dd></div><div class="feedback-row"><dt>与第7句衔接</dt><dd>第7句是单个学生，第8句最好沿用the student或this practice，保持指代连续。</dd></div><div class="feedback-row"><dt>推荐修改句</dt><dd>By reworking the problem and identifying the condition that was initially overlooked, the student can avoid the same mistake and apply the lesson to similar problems.</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-21-09 小作文·申请信正文｜间隔复现 复习依据：9月13日第3题“申请校园开放日志愿者”。
+你正在申请担任校园开放日的学生志愿者，职责是带领来访家庭参观校园并回答基本问题。
+请自行选择一项相关经历或能力，用一句话说明它为什么使你能够胜任；不要只写“我有相关经验，所以很适合”。本次为模拟申请，可以设定合理经历；不写申请目的或结尾。 i possess strong communication skills and i am familiar with the campus, which allow me to answer their questions correctly and let them learn our school deeply.">
+        <summary><span class="number">09</span><span class="qtitle">小作文·申请信正文｜间隔复现</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">复习依据：9月13日第3题“申请校园开放日志愿者”。
+你正在申请担任校园开放日的学生志愿者，职责是带领来访家庭参观校园并回答基本问题。
+请自行选择一项相关经历或能力，用一句话说明它为什么使你能够胜任；不要只写“我有相关经验，所以很适合”。本次为模拟申请，可以设定合理经历；不写申请目的或结尾。</p>
+          <div class="answer"><div class="label">你的原答</div><p>I possess strong communication skills and I am familiar with the campus, which allow me to answer their questions correctly and let them learn our school deeply.</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>选择了沟通能力和校园熟悉度，也尝试说明这些能力如何支持职责，已经比原来“relevant experience”具体。</dd></div><div class="feedback-row"><dt>必须调整</dt><dd>their缺少清楚先行对象；let them learn our school deeply是中文直译。英语通常说help visiting families gain a clearer understanding of the university。</dd></div><div class="feedback-row"><dt>任务覆盖</dt><dd>本句写到了回答问题，但“带领来访家庭参观校园”的职责还可以更直接地体现。</dd></div><div class="feedback-row"><dt>表达调整</dt><dd>possess正确但略显生硬；用My strong communication skills and familiarity with the campus形成平行名词结构，which指代也更清楚。</dd></div><div class="feedback-row"><dt>推荐修改句</dt><dd>My strong communication skills and familiarity with the campus would enable me to guide visiting families efficiently and answer their questions clearly.</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-21-10 大作文·数据与谨慎解读｜换情境迁移 复习依据：9月13日第8题“数据变化与服务措施的联系”。
+某社区图书馆的记录如下（训练数据）：3月平均每周有40名上班族读者到馆，6月为65名；图书馆从4月开始延长晚间开放时间。
+请用一个完整英文句子概括3月至6月的人数变化，并对延长开放时间可能起到的作用作出谨慎推测。可以稍长于25词；不能把这组数据写成已经证实的因果关系。 community library has extended the opening time at night since april, and the figure of working readers between march and june rises from 40 to 65.">
+        <summary><span class="number">10</span><span class="qtitle">大作文·数据与谨慎解读｜换情境迁移</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt">复习依据：9月13日第8题“数据变化与服务措施的联系”。
+某社区图书馆的记录如下（训练数据）：3月平均每周有40名上班族读者到馆，6月为65名；图书馆从4月开始延长晚间开放时间。
+请用一个完整英文句子概括3月至6月的人数变化，并对延长开放时间可能起到的作用作出谨慎推测。可以稍长于25词；不能把这组数据写成已经证实的因果关系。</p>
+          <div class="answer"><div class="label">你的原答</div><p>Community library has extended the opening time at night since April, and the figure of working readers between March and June rises from 40 to 65.</p></div><dl class="feedback"><div class="feedback-row"><dt>任务完成</dt><dd>写出了措施、时间和40到65的变化，但没有完成“对措施作用作谨慎推测”这一任务点。并列两个事实不等于建立谨慎联系。</dd></div><div class="feedback-row"><dt>必须纠错</dt><dd>Community library前加the；描述已完成的数据变化用rose，不用rises。</dd></div><div class="feedback-row"><dt>搭配调整</dt><dd>opening time at night改为evening opening hours；figure of working readers不自然，应为the average weekly number of working adult visitors。</dd></div><div class="feedback-row"><dt>谨慎推测</dt><dd>使用suggesting that...may have contributed to...，其中suggesting与may共同限制结论强度，不能使用caused或proved。</dd></div><div class="feedback-row"><dt>推荐修改句</dt><dd>The average weekly number of working adult visitors rose from 40 in March to 65 in June, suggesting that the longer evening opening hours introduced in April may have contributed to the increase.</dd></div><div class="feedback-row"><dt>用户重写／复习结果</dt><dd>未提交，尚未验证。</dd></div></dl>
+        </div>
+      </details></div>
+        </section><section class="day" data-date="2026-09-15">
+          <div class="day-head"><div><span class="eyebrow">DAILY PRACTICE</span><h2>2026-09-15</h2></div><span class="day-count">0/10 已讲评</span></div>
+          <div class="questions">
+      <details class="question" data-state="pending" data-search="2026-09-15-01 大作文·主体解释  ">
+        <summary><span class="number">01</span><span class="qtitle">大作文·主体解释</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-15-02 小作文·来信回复中的事项说明  ">
+        <summary><span class="number">02</span><span class="qtitle">小作文·来信回复中的事项说明</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-15-03 小作文·来信回复中的推荐  ">
+        <summary><span class="number">03</span><span class="qtitle">小作文·来信回复中的推荐</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-15-04 小作文·婉拒与替代帮助  ">
+        <summary><span class="number">04</span><span class="qtitle">小作文·婉拒与替代帮助</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-15-05 小作文·活动通知正文  ">
+        <summary><span class="number">05</span><span class="qtitle">小作文·活动通知正文</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-15-06 大作文·主体说明机制  ">
+        <summary><span class="number">06</span><span class="qtitle">大作文·主体说明机制</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-15-07 大作文·图表客观描述  ">
+        <summary><span class="number">07</span><span class="qtitle">大作文·图表客观描述</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-15-08 大作文·依据数据提出措施  ">
+        <summary><span class="number">08</span><span class="qtitle">大作文·依据数据提出措施</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-15-09 小作文·申请信正文｜复现  ">
+        <summary><span class="number">09</span><span class="qtitle">小作文·申请信正文｜复现</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-15-10 大作文·主体解释｜迁移  ">
+        <summary><span class="number">10</span><span class="qtitle">大作文·主体解释｜迁移</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details></div>
+        </section><section class="day" data-date="2026-09-14">
+          <div class="day-head"><div><span class="eyebrow">DAILY PRACTICE</span><h2>2026-09-14</h2></div><span class="day-count">0/10 已讲评</span></div>
+          <div class="questions">
+      <details class="question" data-state="pending" data-search="2026-09-14-01 大作文·图表客观描述  ">
+        <summary><span class="number">01</span><span class="qtitle">大作文·图表客观描述</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-14-02 小作文·道歉与补救安排  ">
+        <summary><span class="number">02</span><span class="qtitle">小作文·道歉与补救安排</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-14-03 小作文·来信回复中的推荐  ">
+        <summary><span class="number">03</span><span class="qtitle">小作文·来信回复中的推荐</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-14-04 小作文·志愿者招募正文  ">
+        <summary><span class="number">04</span><span class="qtitle">小作文·志愿者招募正文</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-14-05 小作文·向学校部门询问  ">
+        <summary><span class="number">05</span><span class="qtitle">小作文·向学校部门询问</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-14-06 大作文·主体说明作用  ">
+        <summary><span class="number">06</span><span class="qtitle">大作文·主体说明作用</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-14-07 大作文·图画客观描述  ">
+        <summary><span class="number">07</span><span class="qtitle">大作文·图画客观描述</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-14-08 大作文·从描述转向评论  ">
+        <summary><span class="number">08</span><span class="qtitle">大作文·从描述转向评论</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-14-09 小作文·感谢及后续安排｜复现  ">
+        <summary><span class="number">09</span><span class="qtitle">小作文·感谢及后续安排｜复现</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-14-10 大作文·主体解释｜迁移  ">
+        <summary><span class="number">10</span><span class="qtitle">大作文·主体解释｜迁移</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details></div>
+        </section><section class="day" data-date="2026-09-13">
+          <div class="day-head"><div><span class="eyebrow">DAILY PRACTICE</span><h2>2026-09-13</h2></div><span class="day-count">9/10 已讲评</span></div>
+          <div class="questions">
+      <details class="question" data-state="reviewed" data-search="2026-09-13-01 大作文·主体解释  students tend to realize the logical gap missed previously, when they need to explain their problem-solving process.">
+        <summary><span class="number">01</span><span class="qtitle">大作文·主体解释</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>Students tend to realize the logical gap missed previously, when they need to explain their problem-solving process.</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>补to others；更容易可用are more likely to；identify logical gaps they previously overlooked更清楚；通常去掉when前逗号。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>Students are more likely to identify logical gaps they previously overlooked when they have to explain their problem-solving process to others.</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-13-02 小作文·感谢及后续安排  thank you for you approval for providing areas for our reading activities at weekends; we will send the final schedule to you before this thursday.">
+        <summary><span class="number">02</span><span class="qtitle">小作文·感谢及后续安排</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>Thank you for you approval for providing areas for our reading activities at weekends; we will send the final schedule to you before this Thursday.</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>you→your；provide a venue；agree to do；补for confirmation；分号可保留。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>Thank you for agreeing to provide us with a venue for our weekend reading activities; we will send you the final schedule for confirmation before Thursday.</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-13-03 小作文·申请信正文  i have relevant experiences，therefore i am good at it.">
+        <summary><span class="number">03</span><span class="qtitle">小作文·申请信正文</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>I have relevant experiences，therefore I am good at it.</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>经验用experience；逗号加therefore不能连接两个独立句；须给具体经历与职责的联系。示范中的校园导游经历是教练补充，不是用户真实经历。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>Having previously served as a campus guide, I am well prepared to lead visiting families around the university and answer their questions.</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-13-04 小作文·合理投诉及请求  dear sir or madam，
+i booked the 301 room from 2 o&#x27;clock to 4 o&#x27;clock this afternoon, but now i find the door being locked. since our group activity begin at 2 o&#x27;clock 15min, i hope this matter can be solved in time.">
+        <summary><span class="number">04</span><span class="qtitle">小作文·合理投诉及请求</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>Dear Sir or Madam，
+I booked the 301 room from 2 o&#x27;clock to 4 o&#x27;clock this afternoon, but now I find the door being locked. Since our group activity begin at 2 o&#x27;clock 15min, I hope this matter can be solved in time.</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>Room 301；find the door locked；activity begins；2:15 p.m.；请求须具体到开门。未遵守一句话、不写称呼的限制。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>I reserved Room 301 from 2:00 to 4:00 p.m. today, but it is locked; as our group activity begins at 2:15, could you please arrange for someone to open it immediately?</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-13-05 小作文·正式邀请中的回复请求  i sincerely hope you will honor us with your presence and please tell me before friday if you could come.">
+        <summary><span class="number">05</span><span class="qtitle">小作文·正式邀请中的回复请求</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>I sincerely hope you will honor us with your presence and please tell me before Friday if you could come.</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>honor us with your presence可用但较郑重；回复请求用confirm whether更清楚。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>We would be honored by your presence, and I would appreciate it if you could confirm before Friday whether you will be able to attend.</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-13-06 大作文·主体说明作用  community exercise facilities reduce residents&#x27; travelling time , making it more possible for them to exercise regularly.">
+        <summary><span class="number">06</span><span class="qtitle">大作文·主体说明作用</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>Community exercise facilities reduce residents&#x27; travelling time , making it more possible for them to exercise regularly.</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>因果和making结构可保留；more possible改easier；补前往远处健身房。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>Community exercise facilities reduce the time residents spend travelling to distant gyms, making it easier for them to exercise regularly.</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-13-07 大作文·图画客观描述  in the picture, a student volunteer is explaining exhibits to two international students by using a pad with multilanguage explanation.">
+        <summary><span class="number">07</span><span class="qtitle">大作文·图画客观描述</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>In the picture, a student volunteer is explaining exhibits to two international students by using a pad with multilanguage explanation.</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>tablet；bilingual descriptions；补可见导览安排，不能加入意义评价。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>In the picture, a student volunteer is using a tablet with bilingual descriptions to explain museum exhibits to two international students, while a sign at the entrance lists Saturday bilingual tours at 10 a.m. and 2 p.m.</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="blocked" data-search="2026-09-13-08 大作文·材料联系与谨慎解读  不会。">
+        <summary><span class="number">08</span><span class="qtitle">大作文·材料联系与谨慎解读</span><span class="badge blocked">待补写</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>不会。</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>已给半开放支架；补24、41、4月及谨慎推论；原讲评提示contribute to，不提供完整答案。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>The average weekly number of international student visitors rose from ______ in March to ______ in June, suggesting that the bilingual tours introduced in ______ may have ______________________________.</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-13-09 小作文·礼貌询问｜复现  i am writing to ask whether there is one more 模拟面试 activity next week, since i noticed the activity was all booked.">
+        <summary><span class="number">09</span><span class="qtitle">小作文·礼貌询问｜复现</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>I am writing to ask whether there is one more 模拟面试 activity next week, since I noticed the activity was all booked.</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>mock interview session；is fully booked；补周四；未来安排用will offer。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>Since this Thursday’s mock interview session is fully booked, I am writing to ask whether the center will offer an additional session next week.</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details>
+      <details class="question" data-state="reviewed" data-search="2026-09-13-10 大作文·主体解释｜迁移  the interview can help students practice their instantly answering.">
+        <summary><span class="number">10</span><span class="qtitle">大作文·主体解释｜迁移</span><span class="badge reviewed">已讲评</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <div class="answer"><div class="label">你的原答</div><p>The interview can help students practice their instantly answering.</p></div><dl class="feedback"><div class="feedback-row"><dt>原讲评要点（摘要）</dt><dd>practise answering questions；on the spot；补unexpected follow-up questions，并说明真实面试中的作用。</dd></div><div class="feedback-row"><dt>教练原修改句或补写支架</dt><dd>Answering unexpected follow-up questions on the spot helps students organize their thoughts quickly and respond more effectively in real interviews.</dd></div><div class="feedback-row"><dt>用户重写</dt><dd>暂无可核对记录</dd></div><div class="feedback-row"><dt>复习结果</dt><dd>尚未验证</dd></div></dl>
+        </div>
+      </details></div>
+        </section><section class="day" data-date="2026-09-12">
+          <div class="day-head"><div><span class="eyebrow">DAILY PRACTICE</span><h2>2026-09-12</h2></div><span class="day-count">0/10 已讲评</span></div>
+          <div class="questions">
+      <details class="question" data-state="pending" data-search="2026-09-12-01 大作文·主体论证  ">
+        <summary><span class="number">01</span><span class="qtitle">大作文·主体论证</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-12-02 小作文·通知事项  ">
+        <summary><span class="number">02</span><span class="qtitle">小作文·通知事项</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-12-03 小作文·来信回复中的推荐  ">
+        <summary><span class="number">03</span><span class="qtitle">小作文·来信回复中的推荐</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-12-04 小作文·向教授提出请求  ">
+        <summary><span class="number">04</span><span class="qtitle">小作文·向教授提出请求</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-12-05 小作文·招募通知正文  ">
+        <summary><span class="number">05</span><span class="qtitle">小作文·招募通知正文</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-12-06 大作文·主体说明作用  ">
+        <summary><span class="number">06</span><span class="qtitle">大作文·主体说明作用</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-12-07 大作文·图画客观描述  ">
+        <summary><span class="number">07</span><span class="qtitle">大作文·图画客观描述</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-12-08 大作文·主体评论  ">
+        <summary><span class="number">08</span><span class="qtitle">大作文·主体评论</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-12-09 小作文·礼貌询问｜复现  ">
+        <summary><span class="number">09</span><span class="qtitle">小作文·礼貌询问｜复现</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-12-10 大作文·主体解释｜迁移  ">
+        <summary><span class="number">10</span><span class="qtitle">大作文·主体解释｜迁移</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details></div>
+        </section><section class="day" data-date="2026-09-11">
+          <div class="day-head"><div><span class="eyebrow">DAILY PRACTICE</span><h2>2026-09-11</h2></div><span class="day-count">0/10 已讲评</span></div>
+          <div class="questions">
+      <details class="question" data-state="pending" data-search="2026-09-11-01 大作文·图表客观描述  ">
+        <summary><span class="number">01</span><span class="qtitle">大作文·图表客观描述</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-11-02 小作文·通知报名安排  ">
+        <summary><span class="number">02</span><span class="qtitle">小作文·通知报名安排</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-11-03 小作文·来信回复中的建议  ">
+        <summary><span class="number">03</span><span class="qtitle">小作文·来信回复中的建议</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-11-04 小作文·道歉信中的补救  ">
+        <summary><span class="number">04</span><span class="qtitle">小作文·道歉信中的补救</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-11-05 小作文·招募通知正文  ">
+        <summary><span class="number">05</span><span class="qtitle">小作文·招募通知正文</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-11-06 大作文·主体说明作用  ">
+        <summary><span class="number">06</span><span class="qtitle">大作文·主体说明作用</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-11-07 大作文·主体评论  ">
+        <summary><span class="number">07</span><span class="qtitle">大作文·主体评论</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-11-08 大作文·主体解释  ">
+        <summary><span class="number">08</span><span class="qtitle">大作文·主体解释</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-11-09 小作文·礼貌询问｜复现  ">
+        <summary><span class="number">09</span><span class="qtitle">小作文·礼貌询问｜复现</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details>
+      <details class="question" data-state="pending" data-search="2026-09-11-10 大作文·主体解释｜迁移  ">
+        <summary><span class="number">10</span><span class="qtitle">大作文·主体解释｜迁移</span><span class="badge pending">待作答</span><span class="chevron">⌄</span></summary>
+        <div class="question-body">
+          <div class="label">题目</div><p class="prompt"></p>
+          <p class="empty">还没有提交答案，之后可以按日期和题号补交。</p>
+        </div>
+      </details></div>
+        </section></div><p class="no-results" id="empty">没有符合条件的记录。</p>
+<section class="history"><span class="eyebrow">HISTORICAL SUMMARY</span><h2>2026-09-10 · 待补档摘要</h2><p>当日10题已答已评，但现有记录只有主题摘要。未取得的原文不会被补写或猜测。</p><div class="history-row"><span>01</span><b>手机放另一房间</b><em>已答已评（摘要确认），原文待补</em></div><div class="history-row"><span>02</span><b>社区图书馆周末开放</b><em>已答已评（摘要确认），原文待补</em></div><div class="history-row"><span>03</span><b>给Daniel推荐校园中国文化活动</b><em>已答已评（摘要确认），原文待补</em></div><div class="history-row"><span>04</span><b>讲座满额后礼貌询问机会</b><em>已答已评（摘要确认），原文待补</em></div><div class="history-row"><span>05</span><b>community activities主谓一致纠错</b><em>已答已评（摘要确认），原文待补</em></div><div class="history-row"><span>06</span><b>分担家务表达升级</b><em>已答已评（摘要确认），原文待补</em></div><div class="history-row"><span>07</span><b>小组线上/线下修改海报（衔接第一句）</b><em>已答已评（摘要确认），原文待补</em></div><div class="history-row"><span>08</span><b>同一情境（完整理由）</b><em>已答已评（摘要确认），原文待补</em></div><div class="history-row"><span>09</span><b>图画关灯</b><em>已答已评（摘要确认），原文待补</em></div><div class="history-row"><span>10</span><b>词汇记得中文意思却不会使用</b><em>已答已评（摘要确认），原文待补</em></div></section>
+<footer>题目、原答与讲评均按可核对记录整理 · 后续训练会继续追加到这里</footer>
+</main><script>
+const qs=[...document.querySelectorAll('.question')],days=[...document.querySelectorAll('.day')],search=document.querySelector('#search'),empty=document.querySelector('#empty');let state='all',date='all';
+function apply(){const term=search.value.trim().toLowerCase();let shown=0;qs.forEach(q=>{const okState=state==='all'||q.dataset.state===state;const okDate=date==='all'||q.closest('.day').dataset.date===date;const okText=!term||q.dataset.search.includes(term);q.hidden=!(okState&&okDate&&okText);if(!q.hidden)shown++});days.forEach(d=>d.hidden=![...d.querySelectorAll('.question')].some(q=>!q.hidden));empty.style.display=shown?'none':'block'}
+search.addEventListener('input',apply);document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');state=b.dataset.state;apply()}));document.querySelectorAll('.date-chip').forEach(b=>b.addEventListener('click',()=>{const same=b.classList.contains('active');document.querySelectorAll('.date-chip').forEach(x=>x.classList.remove('active'));date=same?'all':b.dataset.date;if(!same)b.classList.add('active');apply()}));
+</script></body></html>
