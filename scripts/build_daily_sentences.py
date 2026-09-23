@@ -44,14 +44,7 @@ def parse_ledger(path: Path) -> tuple[dict[str, list[Record]], list[tuple[str, s
             current_day = day_match.group(1)
             current = None
             mode = ""
-            if current_day != "2026-09-10":
-                days.setdefault(current_day, [])
-            continue
-
-        if current_day == "2026-09-10":
-            row = re.match(r"^\| (2026-09-10-\d{2}) \| (.*?) \| (.*?) \|$", line)
-            if row:
-                history.append(tuple(clean(x) for x in row.groups()))
+            days.setdefault(current_day, [])
             continue
 
         item = re.match(r"^### (\d{4}-\d{2}-\d{2}-\d{2})｜(.+)$", line)
@@ -62,7 +55,15 @@ def parse_ledger(path: Path) -> tuple[dict[str, list[Record]], list[tuple[str, s
             continue
         if not current:
             continue
-        if line.startswith("**状态：**"):
+        if line.startswith("**题目：**"):
+            prompt = clean(line.removeprefix("**题目：**"))
+            current.prompt += ("\n" if current.prompt and prompt else "") + prompt
+            mode = "prompt"
+        elif line.startswith("**共同情境：**"):
+            context = clean(line.removeprefix("**共同情境：**"))
+            current.prompt += ("\n" if current.prompt and context else "") + context
+            mode = "prompt"
+        elif line.startswith("**状态：**"):
             current.status = clean(line.removeprefix("**状态：**"))
             mode = ""
         elif line.startswith("**用户原答／"):
@@ -154,6 +155,22 @@ SCENE_LABELS = {
 STATE_LABELS = {"reviewed": "已讲评", "submitted": "待讲评", "blocked": "待补写", "pending": "待作答"}
 
 
+def preview(record: Record) -> str:
+    """Return a compact, useful prompt preview for the collapsed list row."""
+    text = " ".join(record.prompt.split())
+    quoted = re.search(r"“([^”]{6,100})”", text)
+    if quoted:
+        text = quoted.group(1)
+    else:
+        text = re.sub(
+            r"^(共同情境：|承接第\d题，|用一句(?:英文)?话(?:准确)?(?:概括|表达|说明|提出|解释|推荐|写出)?[:：]?)",
+            "",
+            text,
+        )
+    text = re.sub(r"^(请)?用一个完整英文句子", "", text).lstrip("表达：: ")
+    return text if len(text) <= 52 else text[:51].rstrip("，；、 ") + "…"
+
+
 def render_record(record: Record) -> str:
     state = kind(record)
     form = mode(record)
@@ -176,7 +193,7 @@ def render_record(record: Record) -> str:
       <details class="question" id="q-{record.key}" data-date="{record.key[:10]}" data-state="{state}" data-genre="{genre(record)}" data-mode="{form}" data-scene="{context}" data-search="{esc(searchable.lower())}">
         <summary>
           <span class="question-index">{record.key[-2:]}</span>
-          <span class="question-main"><strong>{esc(record.title)}</strong><small>{esc(MODE_LABELS[form])} · {esc(SCENE_LABELS[context])}</small></span>
+          <span class="question-main"><strong>{esc(record.title)}</strong><span class="question-preview">{esc(preview(record))}</span><small>{esc(MODE_LABELS[form])} · {esc(SCENE_LABELS[context])}</small></span>
           <span class="state-pill {state}">{STATE_LABELS[state]}</span>
           <span class="open-icon" aria-hidden="true">＋</span>
         </summary>
@@ -210,6 +227,11 @@ def render(days: dict[str, list[Record]], history: list[tuple[str, str, str]]) -
         for i, d in enumerate(dates)
     )
     history_rows = "".join(f'<li><span>{esc(k[-2:])}</span><strong>{esc(topic)}</strong></li>' for k, topic, _ in history)
+    history_panel = (
+        f'<section class="history-panel"><div class="date-heading"><div><span class="overline">ARCHIVE NOTE</span><h2>2026-09-10 <small>/ 历史摘要</small></h2></div><span>{len(history)} 条待补档</span></div>'
+        f'<p>这一天现存记录只有主题摘要，原题、原答与讲评全文仍待补档。</p><ol>{history_rows}</ol></section>'
+        if history else ""
+    )
     return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -258,11 +280,11 @@ def render(days: dict[str, list[Record]], history: list[tuple[str, str, str]]) -
         <div class="results-row"><span id="result-count" role="status" aria-live="polite">显示 {len(records)} 道题</span><span>点击题目查看完整记录</span></div>
         <div id="archive">{date_sections}</div>
         <div class="empty-state" id="empty-state" hidden><strong>没有找到符合条件的题目</strong><p>试试调整分类，或清除筛选重新浏览。</p><button type="button" id="empty-reset">清除筛选</button></div>
-        <section class="history-panel"><div class="date-heading"><div><span class="overline">ARCHIVE NOTE</span><h2>2026-09-10 <small>/ 历史摘要</small></h2></div><span>10 条待补档</span></div><p>这一天的十题曾作答并讲评，但现存记录只有主题摘要。原题、原答与讲评全文仍待补档。</p><ol>{history_rows}</ol></section>
+{history_panel}
       </div>
     </div>
   </main>
-  <footer class="site-footer"><span>更新于 {updated} · 题目与讲评依据可核对台账整理</span><span>历史记录不完整处保留“待补档”说明。</span></footer>
+  <footer class="site-footer"><span>更新于 {updated} · 题目与讲评依据可核对台账整理</span><span>未找到作答记录的题目不会补写答案。</span></footer>
 </div>
 </body>
 </html>"""
