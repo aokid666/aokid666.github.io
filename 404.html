@@ -1,1 +1,32 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>404</title><style>body{font:16px/1.8 -apple-system,'PingFang SC',sans-serif;background:#eef1f4;color:#0f1720;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0}div{text-align:center}a{color:#0f766e;font-weight:600;text-decoration:none}</style></head><body><div><h2>404</h2><p>这个页面不存在</p><p><a href="/">← 回到资料库主页</a></p></div></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>页面未找到｜我的考研资料库</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    .missing{min-height:70vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;max-width:650px}
+    .missing-number{font-size:clamp(90px,17vw,180px);font-weight:700;letter-spacing:-.1em;color:var(--teal);line-height:1}
+    .missing h1{font-size:32px;letter-spacing:-.04em;margin:17px 0 5px}
+    .missing p{color:var(--muted);font-size:14px;margin:0 0 27px}
+    .missing-actions{display:flex;gap:10px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <nav class="site-nav" aria-label="主导航">
+      <a class="wordmark" href="/"><span class="mark">A<span>·</span></span><span>我的考研资料库</span></a>
+      <div class="nav-links"><a href="/">资料首页</a><a href="/daily-sentences/">每日句子</a></div>
+    </nav>
+    <main class="missing">
+      <span class="overline">PAGE NOT FOUND</span>
+      <div class="missing-number">404.</div>
+      <h1>这个页面暂时找不到</h1>
+      <p>链接可能发生了变化。可以从资料首页重新进入，或直接查看每日句子。</p>
+      <div class="missing-actions"><a class="button primary" href="/">返回资料首页 ↗</a><a class="button subtle" href="/daily-sentences/">查看每日句子 ↗</a></div>
+    </main>
+    <footer class="site-footer"><span>我的考研资料库</span><span>仅供学习参考</span></footer>
+  </div>
+</body>
+</html>
