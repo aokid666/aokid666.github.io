@@ -13,6 +13,13 @@ from zoneinfo import ZoneInfo
 
 
 @dataclass
+class Revision:
+    label: str
+    answer: str = ""
+    feedback: list[tuple[str, str]] = field(default_factory=list)
+
+
+@dataclass
 class Record:
     key: str
     title: str
@@ -20,6 +27,7 @@ class Record:
     status: str = ""
     answer: str = ""
     feedback: list[tuple[str, str]] = field(default_factory=list)
+    revisions: list[Revision] = field(default_factory=list)
 
 
 def clean(text: str) -> str:
@@ -32,36 +40,37 @@ def esc(text: str) -> str:
 
 def parse_ledger(path: Path) -> tuple[dict[str, list[Record]], list[tuple[str, str, str]]]:
     days: dict[str, list[Record]] = {}
-    history: list[tuple[str, str, str]] = []
     current_day: str | None = None
     current: Record | None = None
+    revision: Revision | None = None
     mode = ""
-
     for raw in path.read_text(encoding="utf-8").splitlines():
         line = raw.strip()
         day_match = re.match(r"^## (\d{4}-\d{2}-\d{2})(?:$|：)", line)
         if day_match:
             current_day = day_match.group(1)
             current = None
+            revision = None
             mode = ""
             days.setdefault(current_day, [])
             continue
-
+        if line.startswith("## "):
+            current = None
+            revision = None
+            mode = ""
+            continue
         item = re.match(r"^### (\d{4}-\d{2}-\d{2}-\d{2})｜(.+)$", line)
         if item and current_day:
             current = Record(item.group(1), clean(item.group(2)).strip("【】"))
-            days.setdefault(current_day, []).append(current)
+            days[current_day].append(current)
+            revision = None
             mode = "prompt"
             continue
         if not current:
             continue
-        if line.startswith("**题目：**"):
-            prompt = clean(line.removeprefix("**题目：**"))
-            current.prompt += ("\n" if current.prompt and prompt else "") + prompt
-            mode = "prompt"
-        elif line.startswith("**共同情境：**"):
-            context = clean(line.removeprefix("**共同情境：**"))
-            current.prompt += ("\n" if current.prompt and context else "") + context
+        if line.startswith(("**题目：**", "**共同情境：**")):
+            text = clean(line.split("**", 2)[-1])
+            current.prompt += ("\n" if current.prompt and text else "") + text
             mode = "prompt"
         elif line.startswith("**状态：**"):
             current.status = clean(line.removeprefix("**状态：**"))
@@ -69,20 +78,28 @@ def parse_ledger(path: Path) -> tuple[dict[str, list[Record]], list[tuple[str, s
         elif line.startswith("**用户原答／"):
             mode = ""
         elif line.startswith("**用户原答"):
+            revision = None
             mode = "answer"
+        elif line.startswith("**用户改稿"):
+            revision = Revision(clean(line).rstrip("：:"))
+            current.revisions.append(revision)
+            mode = "revision"
         elif line.startswith("|"):
             cells = [clean(x) for x in line.strip("|").split("|")]
-            if len(cells) == 2 and cells[0] not in {"---", "项目"} and not set(cells[0]) <= {"-", ":"}:
-                current.feedback.append((cells[0], cells[1]))
+            if len(cells) == 2 and cells[0] != "项目" and not set(cells[0]) <= {"-", ":"}:
+                target = revision.feedback if revision else current.feedback
+                target.append((cells[0], cells[1]))
             mode = ""
         elif line.startswith(">"):
             quote = clean(line[1:].strip())
-            if quote and mode in {"answer", "prompt"}:
-                previous = current.answer if mode == "answer" else current.prompt
+            if quote and mode == "revision" and revision:
+                revision.answer += ("\n" if revision.answer else "") + quote
+            elif quote and mode in {"answer", "prompt"}:
+                previous = getattr(current, mode)
                 setattr(current, mode, previous + ("\n" if previous else "") + quote)
         elif line and not line.startswith(("##", "**")) and mode == "prompt":
             current.prompt += ("\n" if current.prompt else "") + clean(line)
-    return days, history
+    return days, []
 
 
 def kind(record: Record) -> str:
@@ -129,7 +146,7 @@ def scene(record: Record) -> str:
     if genre(record) == "large":
         if "图表" in title or "数据" in title or "材料联系" in title:
             return "chart"
-        if "图画" in title or "从描述" in title:
+        if "图画" in title or "从描述" in title or record.prompt.startswith("原创图画设定"):
             return "picture"
         return "argument"
     if any(x in title for x in ("通知", "招募", "活动安排")):
@@ -176,6 +193,7 @@ def render_record(record: Record) -> str:
     form = mode(record)
     context = scene(record)
     searchable = " ".join([record.key, record.title, record.prompt, record.answer, *[v for _, v in record.feedback]])
+    searchable += " " + " ".join(r.answer + " " + " ".join(v for _, v in r.feedback) for r in record.revisions)
     answer = (
         f'<div class="answer-block"><span class="content-label">你的原答</span>'
         f'<p class="english">{esc(record.answer)}</p></div>'
@@ -187,6 +205,16 @@ def render_record(record: Record) -> str:
             f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>'
             for k, v in record.feedback
         ) + "</dl></div>"
+    revisions = ""
+    for revision in record.revisions:
+        revisions += (
+            f'<div class="answer-block"><span class="content-label">{esc(revision.label)}</span>'
+            f'<p class="english">{esc(revision.answer)}</p></div>'
+        )
+        if revision.feedback:
+            revisions += '<div class="feedback-block"><span class="content-label">改稿讲评</span><dl class="feedback-list">' + "".join(
+                f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in revision.feedback
+            ) + '</dl></div>'
     if not answer and state != "blocked":
         answer = '<p class="waiting">尚未找到作答记录。可以在聊天中报出日期和题号继续作答。</p>'
     return f"""
@@ -199,7 +227,8 @@ def render_record(record: Record) -> str:
         </summary>
         <div class="question-detail">
           <div class="prompt-block"><span class="content-label">题目 · {record.key}</span><p>{esc(record.prompt)}</p></div>
-          {answer}{feedback}
+          <p class="waiting">进度：{esc(record.status)}</p>
+          {answer}{feedback}{revisions}
         </div>
       </details>"""
 
@@ -322,3 +351,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
